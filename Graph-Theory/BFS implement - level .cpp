@@ -40,7 +40,7 @@ int main()
         cin>>nodes;
         cin>>edges;
 
-        for(int i=0;i<edges;i++){
+        for(int i=1;i<=edges;i++){
                 cin>>x>>y;
                 graph[x].push_back(y);
         }
