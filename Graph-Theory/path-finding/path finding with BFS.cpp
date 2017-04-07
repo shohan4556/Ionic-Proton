@@ -48,9 +48,13 @@ int main()
 {
         int nodes,edges,x,y,src;
 
+  		cout<<"input the numbers of nodes and edges of the Graph"<<endl;
+  
         cin>>nodes;
         cin>>edges;
-
+		
+  cout<<"input the vertices like : X to Y"<<endl;
+  			
         for(int i=0;i<edges;i++){
                 cin>>x>>y;
                 graph[x].push_back(y);
