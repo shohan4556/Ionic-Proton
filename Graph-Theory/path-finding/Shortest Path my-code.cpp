@@ -9,17 +9,16 @@ int parent[100];
 
 /*
 input
-6 7
+4 6
 
-0 1 1
-0 2 1
-1 3 4
-2 3 2
-2 4 4
-3 5 1
-4 5 1
+0 3 1
+3 0 3
+3 1 2
+1 0 5
+2 3 8
+1 2 3
 
-0 5
+1 3
 
 */
 
@@ -43,11 +42,14 @@ int BFS(int source, int destination)
     while(!myQueue.empty())
     {
         int u = myQueue.top();
-        //myQueue.pop();
+        myQueue.pop();
         int ucost = distance[u];
+       //cout<<"prcessing : "<<u<<endl;
 
         for(int i=0;i<edge[u].size();i++){
+
             int v = edge[u][i];
+            //cout<<"adjacent nodes :"<<v<<endl;
             int vcost = cost[u][i] + ucost;
             //updating
             if(distance[v]>vcost){
@@ -58,7 +60,7 @@ int BFS(int source, int destination)
             }
 
         }
-        myQueue.pop(); // explored
+
     }
 
     return distance[destination];
@@ -112,9 +114,9 @@ int main()
 
    find_path(src,des, parent);
 
-   for(int i=0;i<10;i++){
+   //for(int i=0;i<10;i++){
    // cout<<i<<" --> "<<parent[i]<<endl;
-   }
+   //}
 
     return 0;
 }
